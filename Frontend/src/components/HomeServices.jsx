@@ -5,7 +5,7 @@ const HomeServices = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/get-services")
+    fetch(`${import.meta.env.VITE_BASE_URL}/api/get-services`)
       .then((res) => res.json())
       .then((data) => setServices(data))
       .catch((err) => console.log(err));
