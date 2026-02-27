@@ -7,7 +7,7 @@ export const sendMessage = async (req, res) => {
   try {
     const { name, company, phone, email, message } = req.body;
 
-    if (!name || !company || !phone || !email || !message) {
+    if (!name || !email || !message) {
       return res.status(400).json({ error: "All fields are required" });
     }
 
