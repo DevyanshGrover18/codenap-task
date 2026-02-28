@@ -5,7 +5,7 @@ const HomeProduct = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BASE_URL}/api/get-products`)
+    fetch(`${import.meta.env.VITE_BASE_URL}/api/products`)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
