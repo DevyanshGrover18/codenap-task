@@ -107,7 +107,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           menuOpen ? "max-h-screen border-t border-slate-100" : "max-h-0"
@@ -128,7 +127,6 @@ const Navbar = () => {
             </li>
           ))}
 
-          {/* Mobile auth buttons */}
           {isLoggedIn ? (
             <>
               <li

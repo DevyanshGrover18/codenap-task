@@ -37,10 +37,8 @@ export const signup = async (req, res) => {
     }
 
     const newAdmin = new Admin({ name, email, password });
-    console.log("New admin object:", newAdmin); // ← add
 
     await newAdmin.save();
-    console.log("Saved successfully"); // ← add
 
     const token = generateToken(newAdmin._id);
 
@@ -54,7 +52,6 @@ export const signup = async (req, res) => {
       },
     });
   } catch (error) {
-    console.log("SIGNUP ERROR:", error); // ← add
     res
       .status(500)
       .json({ message: "Server error during signup", error: error.message });

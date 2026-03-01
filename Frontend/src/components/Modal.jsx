@@ -44,7 +44,6 @@ const Modal = ({ onClose, onSave, editItem }) => {
     const file = e.target.files[0];
     if (!file) return;
 
-    // Show local preview instantly
     const reader = new FileReader();
     reader.onloadend = () => setPreview(reader.result);
     reader.readAsDataURL(file);
@@ -82,7 +81,6 @@ const Modal = ({ onClose, onSave, editItem }) => {
         className="bg-white rounded-2xl shadow-2xl w-full max-w-lg overflow-hidden"
         style={{ animation: "slideUp 0.25s ease" }}
       >
-        {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-red-500 mb-0.5">
@@ -100,9 +98,7 @@ const Modal = ({ onClose, onSave, editItem }) => {
           </button>
         </div>
 
-        {/* Body */}
         <div className="px-6 py-5 space-y-5 max-h-[70vh] overflow-y-auto">
-          {/* Title */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-1">
               Title
@@ -124,7 +120,6 @@ const Modal = ({ onClose, onSave, editItem }) => {
             )}
           </div>
 
-          {/* Description */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-1">
               Description
@@ -146,13 +141,11 @@ const Modal = ({ onClose, onSave, editItem }) => {
             )}
           </div>
 
-          {/* Image */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">
               Image
             </label>
 
-            {/* Toggle */}
             <div className="flex bg-gray-100 rounded-lg p-1 mb-3 w-fit gap-1">
               {["url", "upload"].map((mode) => (
                 <button
@@ -220,7 +213,6 @@ const Modal = ({ onClose, onSave, editItem }) => {
               <p className="text-xs text-red-500 mt-1">{errors.image}</p>
             )}
 
-            {/* Preview */}
             {preview && (
               <div
                 className="mt-3 relative rounded-lg overflow-hidden border border-gray-200 h-36"
@@ -238,7 +230,6 @@ const Modal = ({ onClose, onSave, editItem }) => {
                   onError={() => setPreview("")}
                 />
 
-                {/* Uploading overlay */}
                 {uploading && (
                   <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
                     <span className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin mb-2" />
@@ -246,7 +237,6 @@ const Modal = ({ onClose, onSave, editItem }) => {
                   </div>
                 )}
 
-                {/* Hover overlay */}
                 {!uploading && (
                   <div
                     className="overlay absolute inset-0 flex items-center justify-center transition-opacity"
@@ -265,7 +255,6 @@ const Modal = ({ onClose, onSave, editItem }) => {
                   </div>
                 )}
 
-                {/* Status badge */}
                 <span className="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white text-xs px-2 py-0.5 rounded-full">
                   {uploading ? "⏳ Uploading..." : uploadedImage && imgMode === "upload" ? "✓ Cloudinary" : "Preview"}
                 </span>
@@ -274,7 +263,6 @@ const Modal = ({ onClose, onSave, editItem }) => {
           </div>
         </div>
 
-        {/* Footer */}
         <div className="flex justify-end gap-3 px-6 py-4 border-t bg-gray-50">
           <button
             type="button"

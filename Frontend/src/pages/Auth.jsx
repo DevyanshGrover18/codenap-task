@@ -66,7 +66,6 @@ export default function AuthPage() {
         className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden"
         style={{ animation: "slideUp 0.3s ease" }}
       >
-        {/* Top bar */}
         <div className="bg-red-600 px-8 py-6">
           <p className="text-red-200 text-xs font-bold uppercase tracking-widest mb-1">
             Admin Panel
@@ -81,16 +80,13 @@ export default function AuthPage() {
           </p>
         </div>
 
-        {/* Form */}
         <div className="px-8 py-6 space-y-4">
-          {/* Server error */}
           {serverError && (
             <div className="bg-red-50 border border-red-200 text-red-600 text-sm px-4 py-3 rounded-lg flex items-center gap-2">
               <span>⚠️</span> {serverError}
             </div>
           )}
 
-          {/* Name - signup only */}
           {!isLogin && (
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-1">
@@ -112,7 +108,6 @@ export default function AuthPage() {
             </div>
           )}
 
-          {/* Email */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-1">
               Email
@@ -132,7 +127,6 @@ export default function AuthPage() {
             )}
           </div>
 
-          {/* Password */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-1">
               Password
@@ -152,7 +146,6 @@ export default function AuthPage() {
             )}
           </div>
 
-          {/* Submit */}
           <button
             type="button"
             onClick={handleSubmit}
@@ -171,7 +164,6 @@ export default function AuthPage() {
             )}
           </button>
 
-          {/* Toggle */}
           <p className="text-center text-sm text-gray-500 pt-2">
             {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
             <button
